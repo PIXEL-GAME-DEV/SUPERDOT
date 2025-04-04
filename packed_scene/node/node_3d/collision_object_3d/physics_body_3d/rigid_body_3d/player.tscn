@@ -1,3 +1,41 @@
-[gd_scene format=3 uid="uid://d0xk7owjgyply"]
+[gd_scene load_steps=6 format=3 uid="uid://d0xk7owjgyply"]
+
+[ext_resource type="Script" uid="uid://wadki24b042n" path="res://script/object/node/node_3d/collision_object_3d/physics_body_3d/rigid_body_3d/player.gd" id="1_w8ex8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w8ex8"]
+friction = 0.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nnw44"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glbun"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t5nb2"]
+radius = 0.3
+height = 1.8
 
 [node name="Player" type="RigidBody3D"]
+mass = 80.0
+physics_material_override = SubResource("PhysicsMaterial_w8ex8")
+script = ExtResource("1_w8ex8")
+_mouse_dpi = 2000
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_nnw44")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_glbun")
+gi_mode = 2
+mesh = SubResource("CapsuleMesh_t5nb2")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="Orientation" type="Node3D" parent="."]
+unique_name_in_owner = true
+top_level = true
