@@ -1,0 +1,4 @@
+[gd_resource type="SystemFont" format=3 uid="uid://bmh82bicf8tqh"]
+
+[resource]
+font_names = PackedStringArray("Departure Mono")
