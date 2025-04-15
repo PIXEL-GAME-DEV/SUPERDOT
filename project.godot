@@ -15,6 +15,10 @@ run/main_scene="uid://diuhkfr3k2scu"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://texture/texture_2d/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://audio_bus_layout/default_bus_layout.tres"
+
 [input]
 
 x={
